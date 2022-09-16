@@ -20,5 +20,6 @@
 
 
 #### Links
-- [airbnb Respository](https://github.com/airbnb/javascript) - You can check Airbnb JS style guide here
+- [airbnb Respository](https://github.com/airbnb/javascript) - We can check Airbnb JS style guide here
+- [eslint-config-airbnb-base repository](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) - We can see the documentation to know how to install the package
 - [Assignment Repository](https://github.com/airbnb/javascript) - You can check the commits to understand before and after integrating the `eslint-config-airbnb-base` package

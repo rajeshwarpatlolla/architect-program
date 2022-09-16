@@ -42,5 +42,6 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "precommit": "npm run lint"
 }

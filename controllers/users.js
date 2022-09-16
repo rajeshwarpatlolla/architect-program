@@ -10,8 +10,8 @@ const createNewUser = async function (req) {
     }
     const user = new UsersModel(req.payload);
     return await user.save();
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    console.log(error.message);
     return Boom.badImplementation();
   }
 };
@@ -26,7 +26,7 @@ const getAllUsers = async function () {
       statusCode: 200,
     };
   } catch (error) {
-    console.log(e.message);
+    console.log(error.message);
     return Boom.badImplementation();
   }
 };
@@ -43,8 +43,8 @@ const getUserDetails = async function (req) {
       data: userFound,
       statusCode: 200,
     };
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    console.log(error.message);
     return Boom.badImplementation();
   }
 };
@@ -56,8 +56,8 @@ const updateUserDetails = async function (req) {
       return Boom.notFound("User with this user id doesn't exists");
     }
     return await UsersModel.replaceOne({ _id: req.params.userId }, req.payload);
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    console.log(error.message);
     return Boom.badImplementation();
   }
 };
@@ -69,8 +69,8 @@ const deleteUserDetails = async function (req) {
       return Boom.notFound("User with this user id doesn't exists");
     }
     return await UsersModel.deleteOne({ _id: req.params.userId });
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    console.log(error.message);
     return Boom.badImplementation();
   }
 };

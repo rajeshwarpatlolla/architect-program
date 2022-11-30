@@ -31,7 +31,23 @@ const getUserDetails = async (req) => {
     if (!userFound) {
       return Boom.notFound("User with this user id doesn't exists");
     }
-    return userFound;
+    return {
+      ...JSON.parse(JSON.stringify(userFound)),
+      links: [
+        {
+          href: `users/${req.params.userId}`,
+          rel: 'users',
+          type: 'PUT',
+          title: 'Update user',
+        },
+        {
+          href: `users/${req.params.userId}`,
+          rel: 'users',
+          type: 'DELETE',
+          title: 'Delete user',
+        },
+      ],
+    };
   } catch (error) {
     console.log(error.message);
     return Boom.badImplementation();
